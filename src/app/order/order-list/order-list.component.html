@@ -1,0 +1,35 @@
+<div class="container">
+  <div>
+    <span class="title">Order List</span>
+  </div>
+  <div class="totalPrice">
+    <span class="totalPrice-label">Total price: </span>
+    <span class="price"><sup>{{totalPrice}} DT</sup></span>
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">book title</th>
+        <th scope="col">price</th>
+        <th scope="col">quantity</th>
+        <th scope="col">action</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let el of orderList;let indexOfElement=index;">
+        <th scope="row">{{indexOfElement+1}}</th>
+        <td>{{el.book.title}}</td>
+        <td>{{el.price}}</td>
+        <td>{{el.quantity}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="delete(el.id)">Delete</button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
